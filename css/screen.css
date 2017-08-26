@@ -1,26 +1,21 @@
-html
-{
+html {
 	background: #060606;
 	color:  #ff0066;
 }
-body
-{
+body {
 	font-family: monospace;
 	font-size: 18px;
 	width: 500px;
 	margin: 0px auto 0px auto;
 }
-pre
-{
+pre {
 	font-weight: bold;
 }
-a
-{
+a {
 	color: inherit;
 	font-weight: bold;
 }
-ul
-{
+ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;

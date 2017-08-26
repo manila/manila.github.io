@@ -1,5 +1,4 @@
-@keyframes blink
-{
+@keyframes blink {
 	0%
 	{
 		opacity: 1;
@@ -18,8 +17,7 @@
 	}	
 }
 
-.blink
-{
+.blink {
 	animation-name: blink;
 	animation-duration: 1s;
 	animation-iteration-count: infinite;
