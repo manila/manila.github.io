@@ -2,18 +2,22 @@ html
 {
 	background: #060606;
 	color:  #ff0066;
-	font-weight: bold;
 }
 body
 {
 	font-family: monospace;
 	font-size: 18px;
-	width: 600px;
+	width: 500px;
 	margin: 0px auto 0px auto;
+}
+pre
+{
+	font-weight: bold;
 }
 a
 {
 	color: inherit;
+	font-weight: bold;
 }
 ul
 {
