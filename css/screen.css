@@ -1,25 +1,19 @@
-@media screen and (min-aspect-ratio: 1/1)
+html
 {
-	body
-	{
-		width: 1000px;
-	}
-}
-p
-{
-	color: #000000;
-	font-family: monospace;
-	font-size: 18px;
-}
-a
-{
+	background: #060606;
+	color:  #ff0066;
 	font-weight: bold;
-	color: #444;
 }
 body
 {
+	font-family: monospace;
+	font-size: 18px;
 	width: 600px;
 	margin: 0px auto 0px auto;
+}
+a
+{
+	color: inherit;
 }
 ul
 {
