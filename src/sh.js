@@ -39,7 +39,7 @@ function ls(args) {
 			print('not ready yet');
 			break;
 		case "":
-			print('<span class="highlight">links</span> <span class="highlight">posts</span>');
+			print('about.txt <span class="highlight">links</span> <span class="highlight">posts</span>');
 			break;
 		default:
 			break;
@@ -47,7 +47,7 @@ function ls(args) {
 }
 
 function help() {
-	print("JS Shell 0.1 - Manuel Nila<br>available commands:<br><br>ls<br>help<br>man<br>clear");
+	print("JS Shell 0.1 - Manuel Nila 2017<br>available commands:<br><br>ls<br>help<br>man<br>clear");
 }
 
 function clear() {
@@ -60,7 +60,7 @@ function commandNotFound(command) {
 
 function cowsay(text) {
 	if (text == "") {
-		print("usage cowsay");
+		print("usage: cowsay exampletext");
 	} else {
 		print(text + "<br>  \\   ^__^<br>   \\  (oo)\\_______<br>      (__)\\       )\\/\\<br>          ||----w |<br>          ||     ||");
 	}
