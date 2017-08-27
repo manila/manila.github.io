@@ -7,28 +7,30 @@
 		<link rel="stylesheet" href="css/blink.css" media="screen">
 	</head>
 	<body>
-		<p> $ cat manila.github.io </p>
-		<p>Hello! my name is</p>
-		<pre id="ascii-art">
+		<div id="term">
+			<p> $ cat manila.github.io </p>
+			<p>Hello! my name is</p>
+			<pre id="ascii-art">
  __   __      ___      __    __    __  
 |\__\/\__\   /\___\   |\__\ |\__\ |\__\
 ||   \/   | / /    \  ||   \||  | ||  |
 ||        |/ /  /\  \ ||    \|  | ||  |
 \|__|\/|__|\/__/ \\__\\|__|\____| \|__|
-		</pre>
-		<p>$ ls links</p>
-		<p>
-			<a href="#">about</a>&nbsp;
-			<a href="https://github.com/manila" target="_blank">github</a>&nbsp;
-			<a href ="https://www.linkedin.com/in/manuelnila" target="_blank">linkedin</a>&nbsp;
-			<a href="#">resume</a>
-		</p>
-		<p>$ ls -1 posts</p>
-		<ul>
+			</pre>
+			<p>$ ls links</p>
+			<p>
+				<a href="#">about</a>&nbsp;
+				<a href="https://github.com/manila" target="_blank">github</a>&nbsp;
+				<a href ="https://www.linkedin.com/in/manuelnila" target="_blank">linkedin</a>&nbsp;
+				<a href="#">resume</a>
+			</p>
+			<p>$ ls -1 posts</p>
+			<ul>
 			<li><p><a href="#">Hello World!</a></p></li>
-		</ul>
-		<pre class="prompt">$&nbsp;</pre>
-		<div id="cursor" class="blink"></div>
+			</ul>
+			<pre class="prompt">$&nbsp;</pre>
+			<div id="cursor" class="blink"></div>
+		</div>
 		<input autofocus type="text" id="term-input">
 		<script src="src/sh.js"></script>
 	</body>
