@@ -7,18 +7,63 @@ var cursor = document.getElementById("cursor"),
 
 cursor.classList.add("blink");
 
-function helpMe() {
-	var helpText = document.createElement("pre");
+function parseCommand(str) {
+	if (str.indexOf(" ") > 0) {
+		return str.slice(0, str.indexOf(" "));
+	} else {
+		return str;
+	}
+}
+
+function parseArgs(str) {
+	if (str.indexOf(" ") > 0) {
+		return str.slice(str.indexOf(" ") + 1);
+	} else {
+		return "";
+	}
+}
+
+function print(str) {
+	var pre = document.createElement("pre");
 	
-	helpText.innerHTML = "JS Shell 0.1 - Manuel Nila<br>available commands:<br><br>ls<br>help<br>man<br>clear";
-	terminal.appendChild(helpText);
+	pre.innerHTML = str;
+	terminal.appendChild(pre);
+}
+
+function ls(args) {
+	switch (args) {
+		case "links":
+			print('not ready yet');
+			break;
+		case "posts":
+			print('not ready yet');
+			break;
+		case "":
+			print('<span class="highlight">links</span> <span class="highlight">posts</span>');
+			break;
+		default:
+			break;
+	}
+}
+
+function help() {
+	print("JS Shell 0.1 - Manuel Nila<br>available commands:<br><br>ls<br>help<br>man<br>clear");
+}
+
+function clear() {
+	terminal.innerHTML = "";
 }
 
 function commandNotFound(command) {
-	var errorElem = document.createElement("pre");
-	
-	errorElem.innerHTML = command + ": command not found";
-	terminal.appendChild(errorElem);
+	print(command + ": command not found");
+}
+
+function cowsay(text) {
+	if (text == "") {
+		print("usage cowsay");
+	} else {
+		print(text + "<br>  \\   ^__^<br>   \\  (oo)\\_______<br>      (__)\\       )\\/\\<br>          ||----w |<br>          ||     ||");
+	}
 }
 
 function createNewPrompt() {
@@ -52,19 +97,28 @@ document.onkeyup = function (e) {
 
 input.onkeydown = function (e) {
 	if (e && e.keyCode == 13) {
-		switch (this.value) {
+		switch (parseCommand(this.value)) {
 			case "help":
-				helpMe();	
+				help();	
 				break;	
 			case "clear":
-				terminal.innerHTML = "";
+				clear();
 				break;
 			case "ls":
+				ls(parseArgs(this.value));
+				break;
+			case "man":
+				break;
+			case "echo":
+				print(parseArgs(this.value));
+				break;
+			case "cowsay":
+				cowsay(parseArgs(this.value));
 				break;
 			case "":
 				break;
 			default:
-				commandNotFound(this.value);
+				commandNotFound(parseCommand(this.value));
 				break;
 		}
 		createNewPrompt();

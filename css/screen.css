@@ -31,6 +31,9 @@ input[type="text"] {
 	right: 0;
 	width: 13px;
 }
+div#term {
+	margin: 1em 0em 0em 0em;
+}
 div#cursor {
 	float: left;
 	width: 10px;
@@ -46,4 +49,10 @@ pre.prompt {
 }
 pre.prompt-history {
 	margin: 0em 0em 1em 0em;
+}
+.highlight {
+	background: #ff0066;
+	color: #060606;
+	font-weight: bold;
+	padding: 0px 1px;
 }
