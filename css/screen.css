@@ -8,7 +8,10 @@ body {
 	width: 500px;
 	margin: 0px auto 0px auto;
 }
-pre {
+p {
+	margin: 1em 0em 1em 0em;
+}
+pre#ascii-art {
 	font-weight: bold;
 }
 a {
@@ -19,4 +22,28 @@ ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	margin: 1em 0em 1em 0em;
+}
+input[type="text"] {
+	opacity: 0;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 13px;
+}
+div#cursor {
+	float: left;
+	width: 10px;
+	height: 20px;
+	background: #ff0066;
+	margin: 0em;
+}
+pre.prompt {
+	float: left;
+	display: inline;
+	margin: 0em;
+
+}
+pre.prompt-history {
+	margin: 1em 0em 1em 0em;
 }

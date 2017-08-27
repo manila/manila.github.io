@@ -8,16 +8,14 @@
 	</head>
 	<body>
 		<p> $ cat manila.github.io </p>
-		<p>&nbsp;</p>
 		<p>Hello! my name is</p>
-		<pre>
+		<pre id="ascii-art">
  __   __      ___      __    __    __  
 |\__\/\__\   /\___\   |\__\ |\__\ |\__\
 ||   \/   | / /    \  ||   \||  | ||  |
 ||        |/ /  /\  \ ||    \|  | ||  |
 \|__|\/|__|\/__/ \\__\\|__|\____| \|__|
 		</pre>
-		<p>&nbsp;</p>
 		<p>$ ls links</p>
 		<p>
 			<a href="#">about</a>&nbsp;
@@ -26,11 +24,12 @@
 			<a href="#">resume</a>
 		</p>
 		<p>$ ls -1 posts</p>
-			<ul>
-				<li><p><a href="#">Hello World!</a></p></li>
-			</ul>
-		<p> $ <span class="blink">&#9611;</span></p>
-
-		<script src="src/blink.js"></script>
+		<ul>
+			<li><p><a href="#">Hello World!</a></p></li>
+		</ul>
+		<pre class="prompt">$&nbsp;</pre>
+		<div id="cursor" class="blink"></div>
+		<input autofocus type="text" id="term-input">
+		<script src="src/sh.js"></script>
 	</body>
 </html>
