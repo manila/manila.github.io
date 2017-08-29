@@ -47,7 +47,12 @@ function ls(args) {
 }
 
 function help() {
-	print("JS Shell 0.1 - Manuel Nila 2017<br>available commands:<br><br>ls<br>help<br>man<br>clear");
+	print(`<pre>available commands:
+clear	clear the terminal screen
+echo	display a line of text
+help	ask for help (lol recursion)
+ls	list directory contents
+pwd	print name of working directory</pre>`);
 }
 
 function clear() {
