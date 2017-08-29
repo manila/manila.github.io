@@ -61,7 +61,7 @@ function clear() {
 }
 
 function commandNotFound(command) {
-	print(command + ": command not found");
+	print(command + ": command not found\ntype help for a list of commands");
 }
 
 function cowsay(text) {
