@@ -115,6 +115,9 @@ input.onkeydown = function (e) {
 			case "cowsay":
 				cowsay(parseArgs(this.value));
 				break;
+			case "pwd":
+				print(window.location.href);
+				break;
 			case "":
 				break;
 			default:
