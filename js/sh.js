@@ -39,7 +39,7 @@ function ls(args) {
 			print('not ready yet');
 			break;
 		case "":
-			print('about.txt <span class="highlight">links</span> <span class="highlight">posts</span>');
+			print('<pre>about.txt <span class="highlight">links</span> <span class="highlight">posts</span> who_am_i.txt</pre>');
 			break;
 		default:
 			break;
@@ -48,6 +48,7 @@ function ls(args) {
 
 function help() {
 	print(`<pre>available commands:
+cat	print file to standard output
 clear	clear the terminal screen
 echo	display a line of text
 help	ask for help (lol recursion)
