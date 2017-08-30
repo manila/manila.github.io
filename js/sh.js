@@ -7,6 +7,38 @@ var cursor = document.getElementById("cursor"),
 
 cursor.classList.add("blink");
 
+function runCommand() {
+	switch (parseCommand(input.value)) {
+		case "help":
+			help();	
+			break;	
+		case "clear":
+			clear();
+			break;
+		case "ls":
+			ls(parseArgs(input.value));
+			break;
+		case "man":
+			break;
+		case "echo":
+			print(parseArgs(input.value));
+			break;
+		case "cowsay":
+			cowsay(parseArgs(input.value));
+			break;
+		case "pwd":
+			print(window.location.href);
+			break;
+		case "":
+			break;
+		default:
+			commandNotFound(parseCommand(input.value));
+			break;
+	}
+	createNewPrompt();
+	window.scrollTo(0, document.body.offsetHeight);
+}
+
 function parseCommand(str) {
 	if (str.indexOf(" ") > 0) {
 		return str.slice(0, str.indexOf(" "));
@@ -73,9 +105,6 @@ function cowsay(text) {
 }
 
 function createNewPrompt() {
-	cursor.remove();	
-	cursor = document.createElement("div");
-
 	var promptElem = document.createElement("pre");
 
 	promptElem.innerHTML = PROMPT;
@@ -84,7 +113,6 @@ function createNewPrompt() {
 	output.classList.remove("prompt");
 	output.classList.add("prompt-history");
 	output = promptElem;
-	cursor.id = "cursor";
 	terminal.appendChild(promptElem);
 	terminal.appendChild(cursor);
 }
@@ -103,36 +131,8 @@ document.onkeyup = function (e) {
 
 input.onkeydown = function (e) {
 	if (e && e.keyCode == 13) {
-		switch (parseCommand(this.value)) {
-			case "help":
-				help();	
-				break;	
-			case "clear":
-				clear();
-				break;
-			case "ls":
-				ls(parseArgs(this.value));
-				break;
-			case "man":
-				break;
-			case "echo":
-				print(parseArgs(this.value));
-				break;
-			case "cowsay":
-				cowsay(parseArgs(this.value));
-				break;
-			case "pwd":
-				print(window.location.href);
-				break;
-			case "":
-				break;
-			default:
-				commandNotFound(parseCommand(this.value));
-				break;
-		}
-		createNewPrompt();
+		runCommand();
 	}
-	window.scrollTo(0, document.body.offsetHeight);
 }
 
 input.oninput = function (e) {

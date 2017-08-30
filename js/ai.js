@@ -17,8 +17,8 @@ function typeCommands(commands) {
 
 function typeCommand(command, callback) {
 	var i = 0,
-	    TYPE_SPEED = 40,
-	    PAUSE_BETWEEN_COMMANDS = 1200;
+	    TYPE_SPEED = 64,
+	    PAUSE_BETWEEN_COMMANDS = 1000;
 
 	var typeTimer = setInterval(function () {
 		if (i <= command.length) {
@@ -26,7 +26,9 @@ function typeCommand(command, callback) {
 			output.innerHTML = PROMPT + command.substr(0, i);
 		} else {
 			unfreezeCursor(cursor);
+			input.value = command.substr(0, i);
 			clearInterval(typeTimer);
+			runCommand();
 			if (callback) {
 				setTimeout(callback, PAUSE_BETWEEN_COMMANDS);
 			}
@@ -35,4 +37,4 @@ function typeCommand(command, callback) {
 	}, TYPE_SPEED);
 }
 
-typeCommands(["echo Hello There", "cowsay Hello!", "help", "echo JK Im all good dont help me"]);
+typeCommands(["echo Hello There!", "cowsay Nice to meet you!", "help", "ls"]);
