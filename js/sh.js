@@ -39,7 +39,7 @@ function ls(args) {
 			print('not ready yet');
 			break;
 		case "":
-			print('<pre>about.txt <span class="highlight">links</span> <span class="highlight">posts</span> who_am_i.txt</pre>');
+			print('<pre>about.txt <span class="highlight">links</span> <span class="highlight">posts</span> whoami.txt</pre>');
 			break;
 		default:
 			break;

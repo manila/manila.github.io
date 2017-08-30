@@ -7,10 +7,10 @@
 		<link rel="stylesheet" href="css/blink.css" media="screen">
 	</head>
 	<body>
-		<div id="term">
-			<pre class="prompt-history">$ cat who_am_i.txt</pre>
-			<p>Hello! my name is</p>
-			<pre id="ascii-art">
+		<div id="no-js">
+			<p>$ cat whoami.txt</p>
+			<pre id="cat-whoami">
+Hello! I'm
  __   __      ___      __    __    __  
 |\__\/\__\   /\___\   |\__\ |\__\ |\__\
 ||   \/   | / /    \  ||   \||  | ||  |
@@ -18,20 +18,28 @@
 \|__|\/|__|\/__/ \\__\\|__|\____| \|__|
 			</pre>
 			<p>$ ls links</p>
-			<p>
+			<p id="cat-links">
 				<a href="#">about</a>&nbsp;
 				<a href="https://github.com/manila" target="_blank">github</a>&nbsp;
 				<a href ="https://www.linkedin.com/in/manuelnila" target="_blank">linkedin</a>&nbsp;
 				<a href="#">resume</a>
 			</p>
 			<p>$ ls posts</p>
-			<ul>
+			<ul id="cat-posts">
 			<li><p><a href="#">Hello World!</a></p></li>
 			</ul>
-			<pre class="prompt">$&nbsp;</pre>
+			<p>$ cat about.txt</p>
+			<p id="cat-about">
+				Welcome!
+			</p>
+		</div>
+		<div id="term">
+			<pre class="prompt">$ </pre>
 			<div id="cursor" class="blink"></div>
 		</div>
 		<input autofocus type="text" id="term-input" autocapitalize="off">
+		<script src="js/no.js"></script>
 		<script src="js/sh.js"></script>
+		<script src="js/ai.js"></script>
 	</body>
 </html>

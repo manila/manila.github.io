@@ -11,7 +11,10 @@ body {
 p {
 	margin: 1em 0em 1em 0em;
 }
-pre#ascii-art {
+pre#cat-whoami:first-line {
+	font-weight: normal;
+}
+pre#cat-whoami {
 	font-weight: bold;
 }
 a {
