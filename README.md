@@ -18,3 +18,18 @@ This has been a fun project with plenty of fun problems to solve along the way.
 - Learn me some ECMA Script 6
 - Be detailed and convicing
 - Have fun (told you this was cliche)
+
+### Capturing Input
+
+we use a hidden input on the page with autofocus set to capture keyboard input.  This lets us abstract the input away from where we "print" the output.
+
+I quickly discovered that the "onchange" method doesn't fire for every keystroke but rather each time the input loses focus. Fortunatly the "oninput" event method is perfect for making sure every keystroke results in a function call to update the view.
+
+
+```JavaScript
+
+input.oninput = function (e) {
+        output.innerHTML = PROMPT + this.value;
+}
+
+```
