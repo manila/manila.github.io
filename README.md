@@ -25,7 +25,6 @@ we use a hidden input on the page with autofocus set to capture keyboard input. 
 
 I quickly discovered that the "onchange" method doesn't fire for every keystroke but rather each time the input loses focus. Fortunatly the "oninput" event method is perfect for making sure every keystroke results in a function call to update the view.
 
-G
 ```JavaScript
 
 input.oninput = function (e) {
@@ -33,5 +32,9 @@ input.oninput = function (e) {
 }
 
 ```
-
-In order to keep things in focus we add an "onclick" event listener to body in order to call focus 
+In order to keep things in focus we add an "onclick" event listener to the document in order to call the focus method on the input.
+```Javascript
+document.onclick = function (e) {
+        input.focus();
+}
+```
