@@ -19,6 +19,23 @@ This has been a fun project with plenty of fun problems to solve along the way.
 - Be detailed and convicing
 - Have fun (told you this was cliche)
 
+### Directory structure
+
+
+/root
+
+        index.html
+        js/
+                sh.js
+                no.js
+                ai.js
+        css/
+                screen.css
+                port.css
+                blink.css
+ 
+
+
 ### Capturing Input
 
 we use a hidden input on the page with autofocus set to capture keyboard input.  This lets us abstract the input away from where we "print" the output.
@@ -38,3 +55,5 @@ document.onclick = function (e) {
         input.focus();
 }
 ```
+
+
