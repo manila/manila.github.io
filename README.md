@@ -20,10 +20,8 @@ This has been a fun project with plenty of fun problems to solve along the way.
 - Have fun (told you this was cliche)
 
 ### Directory structure
-
-
+```
 /root
-
         index.html
         js/
                 sh.js
@@ -33,9 +31,7 @@ This has been a fun project with plenty of fun problems to solve along the way.
                 screen.css
                 port.css
                 blink.css
- 
-
-
+ ```
 ### Capturing Input
 
 we use a hidden input on the page with autofocus set to capture keyboard input.  This lets us abstract the input away from where we "print" the output.
