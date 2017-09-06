@@ -55,6 +55,9 @@ function parseArgs(str) {
 	}
 }
 
+function cat() {
+}
+
 function print(str) {
 	var pre = document.createElement("pre");
 	
@@ -65,7 +68,7 @@ function print(str) {
 function ls(args) {
 	switch (args) {
 		case "links":
-			print('not ready yet');
+			terminal.appendChild(copyElement(document.getElementById("cat-links")));
 			break;
 		case "posts":
 			print('not ready yet');
@@ -115,6 +118,12 @@ function createNewPrompt() {
 	output = promptElem;
 	terminal.appendChild(promptElem);
 	terminal.appendChild(cursor);
+}
+
+function copyElement(elem) {
+	var newElem = document.createElement(elem.tagName);
+	newElem.innerHTML = elem.innerHTML;
+	return newElem;
 }
 
 document.onclick = function (e) {

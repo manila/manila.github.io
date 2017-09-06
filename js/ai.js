@@ -17,7 +17,7 @@ function typeCommands(commands) {
 
 function typeCommand(command, callback) {
 	var i = 0,
-	    TYPE_SPEED = 64,
+	    TYPE_SPEED = 48,
 	    PAUSE_BETWEEN_COMMANDS = 1000;
 
 	var typeTimer = setInterval(function () {
@@ -37,4 +37,4 @@ function typeCommand(command, callback) {
 	}, TYPE_SPEED);
 }
 
-typeCommands(["echo Hello There!", "cowsay Nice to meet you!", "help", "ls"]);
+typeCommands(["echo Hello There!", "cowsay Nice to meet you!", "help", "ls", "echo This is kinda cool..., but why?"]);
