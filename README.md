@@ -51,5 +51,12 @@ document.onclick = function (e) {
         input.focus();
 }
 ```
+### Auto typing!
+
+TODO
+
+### Detecting JavaScript compatibility
+
+TODO
 
 
