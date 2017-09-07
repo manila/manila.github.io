@@ -2,7 +2,7 @@
 
 ## What is this?
 
-Why I'm glad you asked!
+
 
 This is my website, evidence of my passion, and maybe even inspiration for your own project
 ## What's going on here
