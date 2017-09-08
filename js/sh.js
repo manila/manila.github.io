@@ -29,6 +29,9 @@ function runCommand() {
 		case "pwd":
 			print(window.location.href);
 			break;
+		case "cat":
+			cat(parseArgs(input.value));
+			break;
 		case "":
 			break;
 		default:
@@ -55,7 +58,15 @@ function parseArgs(str) {
 	}
 }
 
-function cat() {
+function cat(args) {
+	switch (args) {
+		case "whoami.txt":
+			terminal.appendChild(copyElement(document.getElementById("cat-whoami")));
+			break;
+		default:
+			print('usage: cat filename');
+			break;
+	}	
 }
 
 function print(str) {
