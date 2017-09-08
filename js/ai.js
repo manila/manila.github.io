@@ -18,7 +18,7 @@ function typeCommands(commands) {
 function typeCommand(command, callback) {
 	var i = 0,
 	    TYPE_SPEED = 48,
-	    PAUSE_BETWEEN_COMMANDS = 1000;
+	    PAUSE_BETWEEN_COMMANDS = 600;
 
 	var typeTimer = setInterval(function () {
 		if (i <= command.length) {
@@ -37,4 +37,4 @@ function typeCommand(command, callback) {
 	}, TYPE_SPEED);
 }
 
-typeCommands(["echo Hello There!", "cowsay Nice to meet you!", "help", "ls", "echo This is kinda cool..., but why?"]);
+typeCommands(["cat whoami.txt", "ls links", "cowsay type 'help' for a list of commands"]);
