@@ -37,4 +37,4 @@ function typeCommand(command, callback) {
 	}, TYPE_SPEED);
 }
 
-typeCommands(["cat whoami.txt", "ls links", "cowsay type 'help' for a list of commands"]);
+typeCommands(["cat whoami.txt", "ls links", "cowsay try typing something..."]);
