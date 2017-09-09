@@ -18,7 +18,7 @@ function typeCommands(commands) {
 function typeCommand(command, callback) {
 	var i = 0,
 	    TYPE_SPEED = 48,
-	    PAUSE_BETWEEN_COMMANDS = 600;
+	    PAUSE_BETWEEN_COMMANDS = 1200;
 
 	var typeTimer = setInterval(function () {
 		if (i <= command.length) {
