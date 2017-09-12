@@ -57,6 +57,5 @@ TODO
 
 ### Detecting JavaScript compatibility
 
-TODO
-
+In the js file no.js we use an onload event listener attatched to the body inorder to *hide* elements that would be visibile if JavaScript was enabled.  This keeps the website functional even in cases where JavaScript is not.
 
