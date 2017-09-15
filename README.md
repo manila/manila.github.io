@@ -46,6 +46,8 @@ input.oninput = function (e) {
 
 ```
 In order to keep things in focus we add an "onclick" event listener to the document in order to call the focus method on the input.
+Next we need to type a list of commands one right after another, this is the typeCommands function.
+
 ```Javascript
 document.onclick = function (e) {
         input.focus();
@@ -53,7 +55,7 @@ document.onclick = function (e) {
 ```
 ### Auto typing!
 
-TODO
+This was my favorite part, in the file ```ai.js``` we start with a function to type a single command into the terminal input 
 
 ### Detecting JavaScript compatibility
 
