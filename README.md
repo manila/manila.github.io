@@ -45,7 +45,7 @@ input.oninput = function (e) {
 }
 
 ```
-In order to keep things in focus we add an "onclick" event listener to the document in order to call the focus method on the input.
+In order to keep things in focus we add an "onclick" event listener to the document in order to call the focus method on the input, this is the typeCommand function, you'll notice that this takes a callback function as a paremeter to signal that it's finished typing.
 Next we need to type a list of commands one right after another, this is the typeCommands function.
 
 ```Javascript
