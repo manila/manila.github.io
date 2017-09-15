@@ -45,8 +45,7 @@ input.oninput = function (e) {
 }
 
 ```
-In order to keep things in focus we add an "onclick" event listener to the document in order to call the focus method on the input, this is the typeCommand function, you'll notice that this takes a callback function as a paremeter to signal that it's finished typing.
-Next we need to type a list of commands one right after another, this is the typeCommands function.
+In order to keep things in focus we add an "onclick" event listener to the document in order to call the focus method on the input.
 
 ```Javascript
 document.onclick = function (e) {
@@ -55,7 +54,8 @@ document.onclick = function (e) {
 ```
 ### Auto typing!
 
-This was my favorite part, in the file ```ai.js``` we start with a function to type a single command into the terminal input 
+This was my favorite part, in the file ```ai.js``` we start with a function to type a single command into the terminal input, this is the typeCommand function, you'll notice that this takes a callback function as a paremeter to signal that it's finished typing.
+Next we need to type a list of commands one right after another, this is the typeCommands function.
 
 ### Detecting JavaScript compatibility
 
