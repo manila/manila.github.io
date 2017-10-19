@@ -59,3 +59,8 @@ pre.prompt-history {
 	font-weight: bold;
 	padding: 0px 1px;
 }
+@media screen and (orientation: portrait) {
+	body {
+		width: 100%;
+	}
+}
