@@ -63,4 +63,8 @@ In the js file ```no.js``` we use an onload event listener attatched to the body
 
 Why not ```<noscript>```? 
 
-Elements in the ```<noscript>``` arn't loaded into the DOM if the conditions aren't met (e.g. JavaScript turned off) 
+Elements in the ```<noscript>``` arn't loaded into the DOM if the conditions aren't met (e.g. JavaScript turned off).  This is problomatic because I use these as "template" elements for producing output on the terminal, for the sake of efficientcy I chose to only implement these elements once.  
+
+When there is no JS the "no-js" div can't be disabled (this is done in the no.js file).  When there is JavaScript, the content is hidden and the elements are then, displayed with the nifty Auto Typing animation.
+
+
