@@ -61,3 +61,6 @@ Next we need to type a list of commands one right after another, this is the typ
 
 In the js file ```no.js``` we use an onload event listener attatched to the body inorder to *hide* elements that would be visibile if JavaScript was enabled.  This keeps the website functional even in cases where JavaScript is not.
 
+Why not ```<noscript>```? 
+
+Elements in the ```<noscript>``` arn't loaded into the DOM if the conditions aren't met (e.g. JavaScript turned off) 
