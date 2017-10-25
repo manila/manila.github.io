@@ -1,7 +1,7 @@
 const PROMPT = "$ ";
 
 var cursor = document.getElementById("cursor"),
-    input  = document.getElementById("term-input"),
+    input  = document.getElementById("character-buffer"),
     output = document.getElementsByClassName("prompt")[0],
     terminal = document.getElementById("term");
 
