@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/manila
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://manila.me
+  * I am manila (https://keybase.io/manila) on keybase.
+  * I have a public key with fingerprint 0995 EE17 1B7D B18C BC88  2BFF 29AD 8EE1 D724 4FFD
+
+To do so, I am signing this object:
+
+{
+  body: {
+    key: {
+      eldest_kid: 0101f957b661b3f107c8f8923dcef3a1a87ab316d18e9673e2fadad05c59179a5caa0a,
+      fingerprint: 0995ee171b7db18cbc882bff29ad8ee1d7244ffd,
+      host: keybase.io,
+      key_id: 29ad8ee1d7244ffd,
+      kid: 0101f957b661b3f107c8f8923dcef3a1a87ab316d18e9673e2fadad05c59179a5caa0a,
+      uid: 7ee29bca117d5f53856056edaa7a0119,
+      username: manila
+    },
+    service: {
+      hostname: manila.me,
+      protocol: http:
+    },
+    type: web_service_binding,
+    version: 1
+  },
+  ctime: 1519144299,
+  expire_in: 157680000,
+  prev: 28d58ef922e97accc9f1c589cc650707b5821f682ef07f9f513e5f5ba797a2d1,
+  seqno: 48,
+  tag: signature
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMM6AnicrVJrTBRXFF5ENhUEDDEtJSnSKQTbIsydZWburBSCEKsFbUBasUHXOzN3
+2IF1ZtkHb0oLcSMPRSQmVNqq0IdClao1bYBYRWNUgqIWTFMTqxRCeAUoLYhIOkPa
+H036s/fPveec7/vud07ONX9vg69XeGhi2old3blePVeOuA0f1G7LLSF4VSwizCVE
+Ll6+sE3ETpclVxYJM0ECEkgczfIMA3iTBEhWgBLkKJMoYMmEAIIs4k2AEQHEHMOa
+MCUhEYkkLdAcYDlECwiRiIgiJFnJxg67Q1ZcuizH0RgDFvCsyAMo8AKEFC9JFIdE
+qBVEloqNlSRRI1pVp87QzPHIiaNlVctpgWXZ3n/g/2ff7mU5FmOK4wUEACvSEm2C
+NEPSDBYRYhEJAKcDndihoH1YQ+9DimxDRFkUoeXyZQHrY9X7+Fc9WntHEXaH6lIF
+1aalrS6X3ayzXEV2HVaAecvfAhZeVkRtghohHzucsqoQZqAhBZesKwIacCA2luK4
+KAIX2mUHtsg6gmYZSGpH/wbn6/OCIg2xxFEU5lgkCAInAYGGnCAwNMmSLE9DCkgM
+pLBEshIn0cCEtX55xGpwSgSE3lKeohLmWKj5RNmaplPOVpDL7cBEWfeVrJUGL1+D
+0WeFvloG31Vr/lm4J5vWGE7BkF09D6YfRnRurPJU1X30ZKTRNNpZGtd7sH1Ytll7
+05WJRd+tcGon6f6ydKzfK+f5dIT/5RfylJSfD/vd8j7enhR5qTh6YHtn97veO+/D
+bfeo4ualdcbh+roN17/KcMULg7VXO75oO22cqMIPkzy9QXxA3EuZH1eVT7Sn5gZV
+u76+3pTR0fJ2d4Q9JFhdO4wTo4djXpy9GD/ZV58UYrx3apVQcXzsfloeuGT0S378
+smfKfbu8c9Y/p8j6bOTM6PO4wuIWIWB8jOtbnSO+k+xTkLJYMtB0Y9K2I/Sxp1sO
+9SsYD/Wbyyrsf7+h4NMu5vJdIaapPKDDf0T5KXCwcaaoumZw9Y48PLrf7ONpfZpa
+uxv9OtR88o+93j1zYaUNJPQ0dpV62R+1JmxuDlbDiiL90rf0r8ibO2v5PHh/dUHY
+QlL9fFfb0dmpzISKo4GDGQfuVqa9UjmxNntv+fz3h9+iTlf80jcfnnj2dtlMeNKx
+c5XMN8qF3oQEg/GW7bOwH5nzmSnlv13d3GFt3xhQev5ZW589MCvo6YXCdti/585C
+uv+BhP6T1gdpC0vmfMfwt2fEJv71mvdmvFtfRdt/sC5GDpFO+KF67OaNqCMHz61b
+Wv/nwO9DSuN085vKtaG6LcbCmye25jyaPORqkjbVbEhtiRyPb4hPvrjntU/urOSi
+dw++8V2Maf1f5XfBhQ==
+=Ml/7
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/manila
+
+==================================================================
+
