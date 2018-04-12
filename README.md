@@ -2,13 +2,7 @@
 
 ## What is this?
 
-
-
-This is my website, evidence of my passion, and maybe even inspiration for your own project
-## What's going on here
-
-It may be unoriginal or even cliche to imitate the terminal, But I don't care dammit!
-This has been a fun project with plenty of fun problems to solve along the way.
+This is my website, evidence of my passion, and maybe even inspiration for your own project. It may be unoriginal or even cliche to imitate the terminal. But this has been a fun project with plenty of fun problems to solve along the way.
 
 ## Okay, Okay. Tell me more
 
