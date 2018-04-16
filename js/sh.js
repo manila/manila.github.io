@@ -81,8 +81,9 @@ function ls(args) {
 		case "links":
 			terminal.appendChild(copyElement(document.getElementById("cat-links")));
 			break;
-		case "posts":
-			print('not ready yet');
+		case "blog":
+			print('Redirecting...');	
+			setTimeout(function () {window.location.replace("http://blog.manila.me")}, 2000);
 			break;
 		case "":
 			print('<pre>about.txt <span class="highlight">links</span> <span class="highlight">posts</span> whoami.txt</pre>');
