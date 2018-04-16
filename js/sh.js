@@ -8,7 +8,7 @@ var cursor = document.getElementById("cursor"),
 cursor.classList.add("blink");
 
 function runCommand() {
-	switch (parseCommand(input.value)) {
+	switch (parseCommand(input.value.toString())) {
 		case "help":
 			help();	
 			break;	
@@ -89,6 +89,7 @@ function cd(args) {
 		default:
 			print("cd: " + args + ": No such file or directory");
 			break;
+	}
 }
 
 function ls(args) {
