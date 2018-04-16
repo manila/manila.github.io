@@ -32,6 +32,9 @@ function runCommand() {
 		case "cat":
 			cat(parseArgs(input.value));
 			break;
+		case "cd"
+			cd(parseArgs(input.value));
+			break;
 		case "":
 			break;
 		default:
@@ -54,8 +57,7 @@ function parseArgs(str) {
 	if (str.indexOf(" ") > 0) {
 		return str.slice(str.indexOf(" ") + 1);
 	} else {
-		return "";
-	}
+		return ""; }
 }
 
 function cat(args) {
@@ -76,17 +78,26 @@ function print(str) {
 	terminal.appendChild(pre);
 }
 
+function cd(args) {
+	switch (args) {
+		case "":
+			break;
+		case "blog":
+			print("redirecting...");
+			setTimeout(function () {window.location.replace(args)}, 2000); }
+			break;
+		default:
+			print("cd: " + args + ": No such file or directory");
+			break;
+}
+
 function ls(args) {
 	switch (args) {
 		case "links":
 			terminal.appendChild(copyElement(document.getElementById("cat-links")));
 			break;
-		case "blog":
-			print('Redirecting...');	
-			setTimeout(function () {window.location.replace("http://blog.manila.me")}, 2000);
-			break;
 		case "":
-			print('<pre>about.txt <span class="highlight">links</span> <span class="highlight">posts</span> whoami.txt</pre>');
+			print('<pre>about.txt <span class="highlight">links</span> whoami.txt</pre>');
 			break;
 		default:
 			break;
