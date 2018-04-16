@@ -84,7 +84,7 @@ function cd(args) {
 			break;
 		case "blog":
 			print("redirecting...");
-			setTimeout(function () {window.location.replace(args)}, 2000); }
+			setTimeout(function () {window.location.replace(args)}, 2000);
 			break;
 		default:
 			print("cd: " + args + ": No such file or directory");
@@ -108,6 +108,7 @@ function ls(args) {
 function help() {
 	print(`<pre>available commands:
 cat	print file to standard output
+cd	change directory
 clear	clear the terminal screen
 echo	display a line of text
 help	ask for help (lol recursion)
