@@ -32,7 +32,7 @@ function runCommand() {
 		case "cat":
 			cat(parseArgs(input.value));
 			break;
-		case "cd"
+		case "cd":
 			cd(parseArgs(input.value));
 			break;
 		case "":
