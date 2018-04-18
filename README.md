@@ -1,4 +1,4 @@
-# manila.github.io
+# manila.me
 
 ## What is this?
 
