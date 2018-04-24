@@ -1,6 +1,6 @@
 html {
-	background: #060606;
-	color:  #ff0066;
+	background: #090909;
+	color:  #00ee99;
 }
 body {
 	font-family: monospace;
@@ -41,7 +41,7 @@ div#cursor {
 	float: left;
 	width: 10px;
 	height: 20px;
-	background: #ff0066;
+	background: #00ee99;
 	margin: 0em;
 }
 pre.prompt {
@@ -54,8 +54,8 @@ pre.prompt-history {
 	margin: 0em 0em 1em 0em;
 }
 .highlight {
-	background: #ff0066;
-	color: #060606;
+	background: #00ee99;
+	color: #090909;
 	font-weight: bold;
 	padding: 0px 1px;
 }
