@@ -1,66 +1,12 @@
-html {
-	background: #090909;
-	color:  #00ee99;
+pre, p, a {
+	margin: 1em auto 0px auto;
+	text-align: center;
+	min-width: 250px;
+	max-width: 500px;
+	width: auto;
+	font-family: Inconsolata, Consolas, monospace;
 }
-body {
-	font-family: monospace;
-	font-size: 18px;
-	width: 500px;
-	margin: 0px auto 0px auto;
-}
-p {
-	margin: 1em 0em 1em 0em;
-}
-pre#cat-whoami:first-line {
-	font-weight: normal;
-}
-pre#cat-whoami {
-	font-weight: bold;
-}
-a {
-	color: inherit;
-	font-weight: bold;
-}
-ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	margin: 1em 0em 1em 0em;
-}
-input[type="text"] {
-	opacity: 0;
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	width: 13px;
-}
-div#term {
-	margin: 1em 0em 0em 0em;
-}
-div#cursor {
-	float: left;
-	width: 10px;
-	height: 20px;
-	background: #00ee99;
-	margin: 0em;
-}
-pre.prompt {
-	float: left;
-	display: inline;
-	margin: 0em;
-
-}
-pre.prompt-history {
-	margin: 0em 0em 1em 0em;
-}
-.highlight {
-	background: #00ee99;
-	color: #090909;
-	font-weight: bold;
-	padding: 0px 1px;
-}
-@media screen and (orientation: portrait) {
-	body {
-		width: 100%;
-	}
+img {
+	display: block;
+	margin: 1em auto 0 auto;
 }
