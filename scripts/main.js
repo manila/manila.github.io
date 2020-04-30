@@ -1,56 +1,91 @@
-document.addEventListener("scroll", function () {
-	console.log("scrolled");
-});
+const PIXEL_RATIO = window.devicePixelRatio || 1;
 
-document.body.addEventListener("load", function () {
-	setup();
-});
-
-function resize() {
-	
+const overlay = {
+	width: window.innerWidth,
+	height: window.innerHeight,
+	element: null,
+	context: null,
+	imageData: null,
+	frame: 0
 }
 
-function draw() {
+function setupEventListeners() {
+	document.addEventListener("scroll", function () {
+		console.log("scrolled");
+	});
+	window.addEventListener("resize", function () {
+		setupOverlay();		
+	});
+}
 
+function scrollOverlay() {
+}
+
+function resizeOverlay() {
+	setupOverlay();
+}
+
+function clearOverlay() {
+	overlay.context.clearRect(0, 0, overlay.width, overlay.height);
+}
+
+function drawOverlay() {
+	overlay.frame++;
+	if (overlay.frame % 15 == 0)
+	{
+		for (let i = 0; i < overlay.width; i += 3)
+		{
+			overlay.context.strokeStyle = 'red';
+			overlay.context.beginPath();
+			overlay.context.moveTo(i, 0);
+			overlay.context.lineTo(i, overlay.height);
+			overlay.context.stroke();
+			overlay.context.strokeStyle = 'green';
+			overlay.context.beginPath();
+			overlay.context.moveTo(i + 1, 0);
+			overlay.context.lineTo(i + 1, overlay.height);
+			overlay.context.stroke();
+			overlay.context.strokeStyle = 'blue';
+			overlay.context.beginPath();
+			overlay.context.moveTo(i + 2, 0);
+			overlay.context.lineTo(i + 2, overlay.height);
+			overlay.context.stroke();
+		}
+	
+	}
+	for (let i = 0; i < overlay.height; i+=4)
+	{
+		overlay.context.strokeStyle = 'black'
+		overlay.context.beginPath();
+		overlay.context.moveTo(0, i);
+		overlay.context.lineTo(overlay.width, i);
+		overlay.context.stroke();
+	}
+
+}
+
+function setupOverlay() {
+	overlay.element = document.getElementById('crt-filter');
+	overlay.width = window.innerWidth;
+	overlay.height = window.innerHeight;
+	overlay.element.width = overlay.width;
+	overlay.element.style.width = overlay.width;
+	overlay.element.height = overlay.height;
+	overlay.element.style.height = overlay.height;
+	overlay.context = overlay.element.getContext("2d");
+	overlay.imageData = overlay.context.getImageData(0, 0, overlay.width, overlay.height); 
+}
+
+function loop() {
+	clearOverlay();
+	drawOverlay();
+	window.requestAnimationFrame(loop);
 }
 
 function setup() {
-	var width = document.documentElement.clientWidth;
-	var height = document.documentElement.clientHeight;
-	var canvas = document.getElementById("crt-filter");
-	canvas.width = width;
-	canvas.height = height;
-	var ctx = canvas.getContext("2d");
-	for (let i = 0; i < canvas.offsetWidth; i += 3)
-	{
-		ctx.strokeStyle = 'red';
-		ctx.beginPath();
-		ctx.moveTo(i, 0);
-		ctx.lineTo(i, canvas.offsetHeight);
-		ctx.stroke();
-		ctx.strokeStyle = 'green';
-		ctx.beginPath();
-		ctx.moveTo(i + 1, 0);
-		ctx.lineTo(i + 1, canvas.offsetHeight);
-		ctx.stroke();
-		ctx.strokeStyle = 'blue';
-		ctx.beginPath();
-		ctx.moveTo(i + 2, 0);
-		ctx.lineTo(i + 2, canvas.offsetHeight);
-		ctx.stroke();
-
-
-
-	}
-	for (let i = 0; i < canvas.offsetHeight; i+=4)
-	{
-
-		ctx.strokeStyle = 'black'
-		ctx.beginPath();
-		ctx.moveTo(0, i);
-		ctx.lineTo(canvas.offsetWidth, i);
-		ctx.stroke();
-	}
+	setupOverlay();
+	setupEventListeners();
+	loop();
 }
 
 setup();
