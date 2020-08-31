@@ -10,8 +10,8 @@ const canvas = {
 const background = {
 	everyXFrames: 2,
 	decay: 0.98,
+	threshold: 2,
 	frames: 0,
-	color: "rgb(16,16,16)"
 };
 
 const setup = () => {
@@ -54,6 +54,10 @@ const updateBuffer = () => {
 				canvas.buffer.data[pixel];
 
 			canvas.buffer.data[pixel] *= background.decay;
+
+			if (canvas.buffer.data[pixel] < background.threshold) {
+				canvas.buffer.data[pixel] = 0;
+			}
 
 			canvas.buffer.data[pixel + 1] = canvas.buffer.data[
 				pixel + 2
