@@ -1,3 +1,0 @@
-document.addEventLister("scroll", function () {
-	console.log("scrolled");
-});

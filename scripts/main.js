@@ -1,91 +1,171 @@
-const PIXEL_RATIO = window.devicePixelRatio || 1;
-
-const overlay = {
-	width: window.innerWidth,
-	height: window.innerHeight,
-	element: null,
+const canvas = {
+	element: document.getElementById("background"),
 	context: null,
-	imageData: null,
-	frame: 0
-}
+	width: 80,
+	height: 0,
+	image: null,
+	buffer: null
+};
 
-function setupEventListeners() {
-	document.addEventListener("scroll", function () {
-		console.log("scrolled");
-	});
-	window.addEventListener("resize", function () {
-		setupOverlay();		
-	});
-}
+const background = {
+	everyXFrames: 2,
+	decay: 0.98,
+	frames: 0,
+	color: "rgb(16,16,16)"
+};
 
-function scrollOverlay() {
-}
+const setup = () => {
+	setupCanvas();
+	setupEvents();
+};
 
-function resizeOverlay() {
-	setupOverlay();
-}
+const update = () => {
+	background.frames++;
 
-function clearOverlay() {
-	overlay.context.clearRect(0, 0, overlay.width, overlay.height);
-}
+	if (background.frames % background.everyXFrames === 0) {
+		updateBuffer();
+	}
+};
 
-function drawOverlay() {
-	overlay.frame++;
-	if (overlay.frame % 15 == 0)
-	{
-		for (let i = 0; i < overlay.width; i += 3)
-		{
-			overlay.context.strokeStyle = 'red';
-			overlay.context.beginPath();
-			overlay.context.moveTo(i, 0);
-			overlay.context.lineTo(i, overlay.height);
-			overlay.context.stroke();
-			overlay.context.strokeStyle = 'green';
-			overlay.context.beginPath();
-			overlay.context.moveTo(i + 1, 0);
-			overlay.context.lineTo(i + 1, overlay.height);
-			overlay.context.stroke();
-			overlay.context.strokeStyle = 'blue';
-			overlay.context.beginPath();
-			overlay.context.moveTo(i + 2, 0);
-			overlay.context.lineTo(i + 2, overlay.height);
-			overlay.context.stroke();
+const draw = () => {
+	canvas.context.putImageData(canvas.buffer, 0, 0);
+};
+
+const loop = () => {
+	update();
+	draw();
+	requestAnimationFrame(loop);
+};
+
+const updateBuffer = () => {
+	const { context, image, width, height } = canvas;
+	const { data } = image;
+
+	for (let i = 1; i < width - 1; i++) {
+		for (let j = 1; j < height - 1; j++) {
+			const pixel = (i + j * width) * 4;
+
+			canvas.buffer.data[pixel] =
+				(data[pixel + 4] +
+					data[pixel - 4] +
+					data[pixel + width * 4] +
+					data[pixel - width * 4]) /
+					2 -
+				canvas.buffer.data[pixel];
+
+			canvas.buffer.data[pixel] *= background.decay;
+
+			canvas.buffer.data[pixel + 1] = canvas.buffer.data[
+				pixel + 2
+			] = canvas.buffer.data[pixel];
 		}
-	
-	}
-	for (let i = 0; i < overlay.height; i+=4)
-	{
-		overlay.context.strokeStyle = 'black'
-		overlay.context.beginPath();
-		overlay.context.moveTo(0, i);
-		overlay.context.lineTo(overlay.width, i);
-		overlay.context.stroke();
 	}
 
-}
+	swapBuffers();
+};
 
-function setupOverlay() {
-	overlay.element = document.getElementById('crt-filter');
-	overlay.width = window.innerWidth;
-	overlay.height = window.innerHeight;
-	overlay.element.width = overlay.width;
-	overlay.element.style.width = overlay.width;
-	overlay.element.height = overlay.height;
-	overlay.element.style.height = overlay.height;
-	overlay.context = overlay.element.getContext("2d");
-	overlay.imageData = overlay.context.getImageData(0, 0, overlay.width, overlay.height); 
-}
+const swapBuffers = () => {
+	const { buffer, image, width, height } = canvas;
 
-function loop() {
-	clearOverlay();
-	drawOverlay();
-	window.requestAnimationFrame(loop);
-}
+	const temp = new ImageData(
+		Uint8ClampedArray.from(buffer.data),
+		width,
+		height
+	);
+	canvas.buffer = image;
+	canvas.image = temp;
+};
 
-function setup() {
-	setupOverlay();
-	setupEventListeners();
+const setupCanvas = () => {
+	setCanvasSize();
+
+	const c = canvas;
+	const { width, height, element } = c;
+
+	c.context = element.getContext("2d", {
+		alpha: false
+	});
+
+	c.image = c.context.getImageData(0, 0, width, height);
+
+	c.buffer = c.image;
+};
+
+const setCanvasSize = () => {
+	const c = canvas;
+
+	c.element.width = c.width;
+	c.element.height = c.height = Math.floor(
+		window.innerHeight / (window.innerWidth / c.width)
+	);
+};
+
+const setPixel = (x, y, color) => {
+	const { width, height } = canvas;
+
+	if (x > 0 && x < width - 1 && y > 0 && y < height - 1) {
+		const pixel = (x + y * width) * 4;
+		canvas.buffer.data = canvas.image.data[pixel] = color;
+		canvas.buffer.data = canvas.image.data[pixel + 1] = color;
+		canvas.buffer.data = canvas.image.data[pixel + 2] = color;
+	}
+};
+
+const handleClick = event => {
+	const { width, height, element } = canvas;
+
+	const x = Math.floor(event.x * (width / element.offsetWidth));
+	const y = Math.floor(event.y * (height / element.offsetHeight));
+
+	setPixel(x, y, 255);
+	setPixel(x + 1, y, 255);
+	setPixel(x - 1, y, 255);
+	setPixel(x, y + 1, 255);
+	setPixel(x, y - 1, 255);
+};
+
+const handleMove = event => {
+	const { width, height, element } = canvas;
+
+	const x = Math.floor(event.x * (width / element.offsetWidth));
+	const y = Math.floor(event.y * (height / element.offsetHeight));
+	setPixel(x, y, 64);
+};
+
+const handleResize = event => {
+	setupCanvas();
+
+	const { width, height } = canvas;
+
+	for (let i = 0; i < width; i++) {
+		for (let j = 0; j < height; j++) {
+			if (
+				i === 2 ||
+				i === width - 2 ||
+				j === 2 ||
+				j === height - 2
+			) {
+				setPixel(i, j, 64);
+			}
+		}
+	}
+};
+
+const setupEvents = () => {
+	window.addEventListener("resize", handleResize);
+	document.addEventListener("click", handleClick);
+	document.addEventListener("mousemove", handleMove);
+};
+
+const removeEvents = () => {
+	window.removeEventListener("resize", handleResize);
+	document.removeEventListener("click", handleClick);
+	document.removeEventListener("mousemove", handleMove);
+};
+
+const init = () => {
+	setup();
 	loop();
 }
 
-setup();
+init();
