@@ -3,28 +3,31 @@ html {
 	background: #000000;
 	font-size: 16px;
 }
+body {
+	font-family: Inconsolata, monospace;
+}
 div#content {
-	margin: 0px 0px 0px 3ch;
+	margin: 0px auto;
 	width: 45ch;
 	height: auto;
 	top: 50%;
-	transform: translateY(-60%);
+	left: 50%;
+	transform: translateX(-50%) translateY(-60%);
 	position: absolute;
 	text-shadow: 1px 1px 0px #000000;
 }
 h1 {
-	font-family: "Libre Baskerville";
+	font-family: inherit;
 	font-size: 2.5rem;
 }
 p {
-	font-family: "Lato";
+	font-family: inherit;
 	font-size: 1.2rem;
 	font-weight: 300;
 }
 a {
 	color: #FFFFFF;
-	font-family: "Lato";
-	font-weight: 400;
+	font-weight: bold;
 }
 a:hover {
 	text-decoration: line-through;
