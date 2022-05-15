@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:  
+jobs:    
   deploy_artifact_to_github_pages:
     permissions:
       contents: 'read'
@@ -23,10 +23,12 @@ jobs:
         with:
           repository: manila/manila.github.io
           path: manila.me
+      - run: |
+          tar --dereference --hard-dereference --directory manila.me/ -cvf artifact.tar .
       - uses: actions/upload-artifact@v3
         with:
-          name: gh-pages
-          path: manila.me
+          name: github-pages
+          path: artifact.tar
       - uses: 'actions/deploy-pages@v1'
         with:
           emit_telemetry: "false"
