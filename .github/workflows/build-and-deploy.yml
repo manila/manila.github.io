@@ -12,12 +12,19 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  deploy_pages:
+jobs:  
+  deploy_artifact_to_github_pages:
     permissions:
       contents: 'read'
       id-token: 'write'
     steps:
+      - uses: actions/checkout@v2
+      - run: mkdir test
+      - run: echo 'Hello World' > test/test.txt
+      - uses: actions/upload-artifact@v3
+        with:
+          name: test-artifact
+          path: test/test.txt
       - uses: 'actions/deploy-pages@v1'
         with:
           emit_telemetry: "false"
