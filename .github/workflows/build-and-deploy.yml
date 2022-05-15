@@ -19,12 +19,13 @@ jobs:
       id-token: 'write'
     steps:
       - uses: actions/checkout@v2
-      - run: mkdir test
-      - run: echo 'Hello World' > test/test.txt
+        with:
+          repository: manila/manila.github.io
+          path: manila.me
       - uses: actions/upload-artifact@v3
         with:
-          name: test-artifact
-          path: test/test.txt
+          name: gh-pages
+          path: manila.me
       - uses: 'actions/deploy-pages@v1'
         with:
           emit_telemetry: "false"
