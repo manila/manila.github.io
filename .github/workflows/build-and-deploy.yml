@@ -23,8 +23,16 @@ jobs:
         with:
           repository: manila/manila.github.io
           path: manila.me
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: .
+          destination: ./_site
+          future: false
+          build_revision: ${{ github.sha }}
+          verbose: true
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: |
-          tar --dereference --hard-dereference --directory manila.me/ -cvf artifact.tar .
+          tar --dereference --hard-dereference --directory ./_site/ -cvf artifact.tar .
       - uses: actions/upload-artifact@v3
         with:
           name: github-pages
