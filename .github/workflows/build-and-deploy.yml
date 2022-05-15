@@ -25,7 +25,7 @@ jobs:
           path: manila.me
       - uses: actions/jekyll-build-pages@v1
         with:
-          source: .
+          source: manila.me
           destination: ./_site
           future: false
           build_revision: ${{ github.sha }}
