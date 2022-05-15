@@ -49,7 +49,6 @@ jobs:
           timeout: "600000"
           error_count: "10"
           reporting_interval: "5000"
-      - run: npm run all
       
   get_latest_artifact:
     runs-on: ubuntu-latest
