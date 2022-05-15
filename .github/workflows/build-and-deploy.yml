@@ -15,7 +15,7 @@ on:
 jobs:
   deploy_pages:
     steps:
-      - uses: 'actions/deploy-pages@v2'
+      - uses: 'actions/deploy-pages@v1'
         with:
           emit_telemetry: "false"
           token: ${{ github.token }}
