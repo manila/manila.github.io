@@ -32,7 +32,7 @@ jobs:
       - uses: 'actions/deploy-pages@v1'
         with:
           emit_telemetry: "false"
-          token: ${{ github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           timeout: "600000"
           error_count: "10"
           reporting_interval: "5000"
