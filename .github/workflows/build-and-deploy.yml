@@ -20,6 +20,8 @@ jobs:
       pages: 'write'
       deployments: 'write'
     steps:
+      - name: 'Deploy to Github Pages'
+        id: deployment
       - uses: actions/checkout@v2
         with:
           repository: manila/manila.github.io
@@ -48,6 +50,9 @@ jobs:
       - run: npm run all
 
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
       
   get_latest_artifact:
     runs-on: ubuntu-latest
