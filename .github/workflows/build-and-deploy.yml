@@ -13,6 +13,12 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  deploy_pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v1
+      - run: npm run all
+      
   get_latest_artifact:
     runs-on: ubuntu-latest
     
