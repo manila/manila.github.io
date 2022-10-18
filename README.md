@@ -8,4 +8,4 @@ github actions
 
 ### TODO
 
-- [ ] add anylytics
+- [x] add anylytics
