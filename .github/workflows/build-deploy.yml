@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: run gensite.sh script
         run: |
-          bash gensite.sh >> index.html \
+          bash ./gensite.sh >> index.html \
           tar cvf github-pages index.html
   
   # Deploy
