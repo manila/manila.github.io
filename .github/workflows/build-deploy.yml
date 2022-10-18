@@ -14,6 +14,8 @@ jobs:
         run: |
           bash ./gensite.sh >> index.html
       - name: Upload GitHub Pages artifact
+        with:
+          path: index.html
         uses: actions/upload-pages-artifact@v1.0.4
 
   # Deploy
