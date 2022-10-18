@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Generate Site
         run: |
-          bash ./gensite.sh >> index.html
+          bash ./gensite.sh > index.html
       - name: Upload GitHub Pages artifact
         with:
           path: "./"
