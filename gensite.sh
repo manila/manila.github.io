@@ -12,6 +12,7 @@ export MANWIDTH=80
 TOP_BUN='<!doctype html>
 <html>
 <head>
+<link rel="me" href="https://mastodon.social/@manila" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLHGR2F8XD"></script>
 <script>
@@ -20,7 +21,7 @@ TOP_BUN='<!doctype html>
   gtag("js", new Date());
 
   gtag("config", "G-GLHGR2F8XD");
-</script> 
+</script>
 </head>
 <body>
 <pre>'
