@@ -11,3 +11,4 @@ github actions ❤️
 - [x] add anylytics
 - [ ] converty urls to clickable links
 - [ ] automatically update date when changed
+- [x] rel=me
