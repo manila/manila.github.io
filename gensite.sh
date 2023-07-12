@@ -13,6 +13,7 @@ TOP_BUN='<!doctype html>
 <html>
 <head>
 <link rel="me" href="https://mastodon.social/@manila" />
+<link rel="me" href="mailto:manila@manila.me" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLHGR2F8XD"></script>
 <script>
