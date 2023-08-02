@@ -12,8 +12,8 @@ export MANWIDTH=80
 TOP_BUN='<!doctype html>
 <html>
 <head>
-<link rel="me" href="https://mastodon.social/@manila" />
 <link rel="me" href="mailto:manila@manila.me" />
+<link rel="me" href="https://mastodon.social/@manila" />
 <link rel="webmention" href="https://webmention.io/manila.me/webmention" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLHGR2F8XD"></script>
