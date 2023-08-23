@@ -12,4 +12,4 @@ github actions ❤️
 - [ ] converty urls to clickable links
 - [ ] automatically update date when changed
 - [x] rel=me
-- [ ] rel=me for github
+- [x] rel=me for github
